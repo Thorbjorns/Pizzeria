@@ -1,14 +1,12 @@
 package com.example.pizzeria.controller;
 
-import com.example.pizzeria.model.Pizza;
 import com.example.pizzeria.service.PizzaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 
-import java.util.List;
-
-@Controller()
+@Controller
 public class HomeController {
 
     private final PizzaService pizzaService;
@@ -19,9 +17,12 @@ public class HomeController {
     }
 
 
+    @GetMapping
     public String goHome(Model model){
-        model.addAttribute(String.valueOf(pizzaService.pizzaList()),pizzaService);
+        model.addAttribute("something","this is from a controller");
+        model.addAttribute("pizzas", pizzaService.pizzaList());
         return "index";
     }
+
 
 }

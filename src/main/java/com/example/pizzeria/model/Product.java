@@ -5,25 +5,27 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
+import java.math.BigInteger;
 
 @MappedSuperclass
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    @Column(name = "name")
+    @Column(name = "name", unique = true)
     private String name;
     @Column(name = "size")
     private ProductSize productSize;
     @Column (name = "description")
     private String description;
     @Column(name = "cost")
-    private Integer cost;
+    private BigInteger cost;
 
     public Product() {
     }
 
-    public Product(String name, ProductSize productSize, String description, Integer cost) {
+    public Product(Long id, String name, ProductSize productSize, String description, BigInteger cost) {
+        this.id = id;
         this.name = name;
         this.productSize = productSize;
         this.description = description;
@@ -62,11 +64,12 @@ public class Product {
         this.description = description;
     }
 
-    public Integer getCost() {
+    public BigInteger getCost() {
         return cost;
     }
 
-    public void setCost(Integer cost) {
+    public void setCost(BigInteger cost) {
         this.cost = cost;
     }
+
 }

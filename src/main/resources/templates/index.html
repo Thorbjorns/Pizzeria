@@ -23,9 +23,21 @@
 
     <div id="content">
 
+        <div>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Price</th>
+        </tr>
+        </div>
 
-        <h1>Content</h1>
-        <a th:href="@{/pizzaMenu.html}">Pizza menu</a>
+        <div>
+        <tr th:each="pizza: ${pizzas}">
+            <td th:text="${pizza.name}"/>
+            <td th:text="${pizza.cost}"/>
+        </tr>
+        </div>
+
+        <h1 th:text="${something}"/>
     </div>
 
     <div id="footer">
