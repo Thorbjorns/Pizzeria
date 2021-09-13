@@ -1,0 +1,45 @@
+
+#container
+{
+    width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#top
+{
+    background-color: darkred;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+#left
+{
+    width: 140px;
+    padding: 10px;
+    min-height: 620px;
+    background-color: gold;
+    float: left;
+}
+#content
+{
+    background-color: blue;
+    width: 1040px;
+    min-height: 600px;
+    padding: 20px;
+    float: left;
+}
+#right
+{
+    width: 140px;
+    padding: 10px;
+    min-height: 620px;
+    background-color: gold;
+    float: right;
+}
+#footer
+{
+    background-color: darkred;
+    align-content: center;
+    padding: 10px;
+    clear: both;
+}
