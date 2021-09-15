@@ -2,7 +2,11 @@ package com.example.pizzeria.service;
 
 import com.example.pizzeria.model.Drink;
 import com.example.pizzeria.repository.DrinkRepository;
+import com.example.pizzeria.security.userApp.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -31,4 +35,6 @@ public class DrinkService {
     public void deleteDrinkById(Long id){
         drinkRepository.deleteById(id);
     }
+
+
 }
