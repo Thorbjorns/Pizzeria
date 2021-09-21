@@ -20,13 +20,14 @@ public class RegistrationService {
     private final ConfirmationTokenService confirmationTokenService;
     private final EmailSender emailSender;
 
+
+
     public RegistrationService(EmailValidator emailValidator, UserAppService userAppService, ConfirmationTokenService confirmationTokenService, EmailSender emailSender) {
         this.emailValidator = emailValidator;
         this.userAppService = userAppService;
         this.confirmationTokenService = confirmationTokenService;
         this.emailSender = emailSender;
     }
-
 
     public String register(RegistrationRequest request){
         boolean isValidEmail = emailValidator.test(request.getEmail());

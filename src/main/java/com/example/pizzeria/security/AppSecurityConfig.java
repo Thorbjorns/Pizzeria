@@ -31,7 +31,7 @@ public class AppSecurityConfig extends WebSecurityConfigurerAdapter {
                 csrf().
                 disable().
                 authorizeRequests().
-                antMatchers("/registration/**").
+                antMatchers("/api/v*/registration/**").
                 permitAll().
                 anyRequest().
                 authenticated().
