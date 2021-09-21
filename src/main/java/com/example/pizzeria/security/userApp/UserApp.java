@@ -27,9 +27,9 @@ public class UserApp implements UserDetails {
     private String email;
     private String password;
     @Enumerated(EnumType.STRING)
-    private AppUserRole appUserRole;
-    private Boolean locked;
-    private Boolean enabled;
+    private AppUserRole appUserRole = AppUserRole.USER;
+    private Boolean locked = false;
+    private Boolean enabled = false;
 
     public UserApp() {
     }
